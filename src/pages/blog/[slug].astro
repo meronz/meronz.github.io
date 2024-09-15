@@ -6,7 +6,6 @@ import FormattedDate from '../../components/FormattedDate.astro';
 import PostPreview from '../../components/PostPreview.astro';
 import { sortItemsByDateDesc } from '../../utils/data-utils';
 import { slugify } from '../../utils/common-utils';
-import CreativeCommonsAttribution from '../../components/CreativeCommonsAttribution.astro';
 
 export async function getStaticPaths() {
     const posts = (await getCollection('blog')).sort(sortItemsByDateDesc);
@@ -74,7 +73,6 @@ const { Content } = await post.render();
             </div>
         )
     }
-    <CreativeCommonsAttribution />
 </BaseLayout>
 
 <script>

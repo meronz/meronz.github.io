@@ -1,25 +1,20 @@
 ---
 title: Learning Yocto — Part 1
-excerpt: In recent years, the way we work has undergone a significant transformation, largely due to advancements in technology and changing attitudes toward work-life balance. One of the most notable changes has been the rise of remote work, allowing employees to work from the comfort of their own homes.
+excerpt: Learn how to create and optimize a custom image for a Raspberry Pi board using Yocto. This guide covers the installation, configuration, and building process.
 publishDate: 'Sep 10 2017'
 tags:
   - Embedded
   - Linux
   - Guide
-seo:
-  image:
-    src: '/post-1.jpg'
-    alt: A person standing at the window
 ---
 
 If you ask students around IT schools or universities what’s the first Linux-based board they think of, most of them will answer “Raspberry Pi!”. Being this cheap (the Zero model costs around 5$!), more and more people are tinkering with Linux boards building basic weather stations or home automation systems. Part of the merit in this is taken by a readily-available and complete operating system.
 
 As we know, Raspberry Pi comes in fact with a full-fledged Debian operating system. But where’s the fun in using pre-built images? You could instead spend some nights to create your own linux-based operating system! Building the cross-compilation toolchain, managing all that dependencies… sounds difficult, right? What if I told you there’s another way, a much easier way?
 
-The scope of this series will be the creation and optimization of a custom image for a Raspberry Pi board with **Yocto**. I will be using the Pi2 version but as we will see, there’s not much of a difference for other boards. The [Yocto Project](https://www.yoctoproject.org/) takes care of the grunt work involved in this kind of things, leaving the user to the customization of the *reference distribution*.
+The scope of this series will be the creation and optimization of a custom image for a Raspberry Pi board with **Yocto**. I will be using the Pi2 version but as we will see, there’s not much of a difference for other boards. The [Yocto Project](https://www.yoctoproject.org/) takes care of the grunt work involved in this kind of things, leaving the user to the customization of the _reference distribution_.
 
-It’s big and well-documented project and there is a lot to know about it but, instead of giving you the four hours introduction, I prefer the *hands-on approach*, that meaning not everything will be discussed in detail. For more detailed answers, refer to the official [Mega-manual](https://www.yoctoproject.org/docs/2.3.1/mega-manual/mega-manual.html).
-
+It’s big and well-documented project and there is a lot to know about it but, instead of giving you the four hours introduction, I prefer the _hands-on approach_, that meaning not everything will be discussed in detail. For more detailed answers, refer to the official [Mega-manual](https://www.yoctoproject.org/docs/2.3.1/mega-manual/mega-manual.html).
 
 ## Installing Yocto
 
@@ -43,7 +38,6 @@ git clone -b pyro git://git.yoctoproject.org/meta-raspberrypi.git
 ```
 
 The meta-raspberrypi layer contains all the information needed to build a toolchain and image for the RPi (think of kernel config, device tree etc.). There are a lot of BSP layers out there, both for amateur and professional boards. There are also layer for packages like mono or for adding Canonical’s snap. You can find a comprehensive index [here](https://layers.openembedded.org/layerindex/branch/master/layers/).
-
 
 ## Configuration and building
 
