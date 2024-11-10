@@ -15,7 +15,7 @@ const projects = (await getCollection('projects')).sort(sortItemsByDateDesc);
 const featuredProjects = projects.filter(({ data }) => data.isFeatured);
 ---
 
-<BaseLayout description={siteConfig.description} image={siteConfig.image}>
+<BaseLayout description={siteConfig.description} image={siteConfig.image} showHeader={false}>
     <Hero />
     {
         featuredProjects?.length > 0 && (
@@ -43,4 +43,19 @@ const featuredProjects = projects.filter(({ data }) => data.isFeatured);
             </div>
         )
     }
+    <div class="max-w-none prose prose-dante sm:prose-lg">
+        <p>
+            I'm Salvatore Merone, a software developer based in Bacoli, Italy. With over six years of experience across a range of tech stacks, I'm all about
+            tackling challenges head-on — whether it's building embedded software for ARM devices, crafting web applications, or diving into the latest tech
+            trends to learn something new.
+        </p>
+        <p>
+            I'm currently working on <a href="https://ellybi.com" target="_blank">Elly</a>, a data visualization platform tailored for small businesses, where I get to wear multiple
+            hats, from front-end development with Blazor to back-end infrastructure on Azure. Alongside my projects, I love sharing what I know, whether through
+            speaking engagements at tech conferences in Italy and abroad or teaching online courses on topics from .NET to Kubernetes.
+        </p>
+        <p>
+            If you're interested in discussing a new project, need a speaker for an event, or just want to talk tech, feel free to connect — I'd love to chat!
+        </p>
+    </div>
 </BaseLayout>
